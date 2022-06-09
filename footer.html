@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+    <script src="https://kit.fontawesome.com/5cb282a0ae.js"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            /* user-select: none; */
+
+        }
+
+        .menu-btn {
+            position: absolute;
+            top: 15px;
+            left: 90%;
+            height: 45px;
+            width: 45px;
+            background: #3f09e3;
+            text-align: center;
+            border-radius: 3px;
+            cursor: pointer;
+            transition: 0.5s ease-in-out;
+        }
+
+        .menu-btn span {
+            color: #fff;
+            font-size: 28px;
+            line-height: 45px;
+        }
+
+        .menu-btn span:hover {
+            transform: scale(1.1);
+        }
+
+        .menu-btn.click {
+            left: 64%;
+        }
+
+        .menu-btn.click span:before {
+            content: '\f00d';
+        }
+
+
+
+        .side_menu.show {
+            left: 70%;
+            background: #ddd;
+            transition: 0.5s ease-in-out;
+
+        }
+
+        .side_menu {
+            top: 0;
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            right: 100%;
+            background: #fff;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            transition: 0.5s ease;
+        }
+
+        .side_menu .data {
+            color: #000;
+            font-size: 25px;
+            font-weight: 600;
+            line-height: 65px;
+            /* text-align: center; */
+            background: #ddd;
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            background: #ddd;
+            height: 100%;
+            width: 100%;
+            list-style: none;
+        }
+
+        nav ul li {
+            line-height: 60px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+        }
+
+        nav ul li a {
+            color: #111;
+            text-decoration: none;
+            font-size: 18px;
+            padding-left: 40px;
+            font-weight: 600;
+            display: block;
+            width: 100%;
+            border-left: 3px solid transparent;
+        }
+
+        nav ul li a:hover {
+            color: #3f09e3;
+            border-left-color: #3f09e3;
+        }
+
+        nav ul ul {
+            position: static;
+            display: none;
+        }
+
+        nav ul .product_show.show {
+            display: block;
+        }
+
+        nav ul .about_show.show {
+            display: block;
+        }
+
+        nav ul ul li {
+            line-height: 42px;
+            border-bottom: none;
+        }
+
+        nav ul ul li a {
+            font-size: 17px;
+            color: #222;
+            padding-left: 80px;
+            border-left: 3px solid transparent;
+            border-left-color: #3f09e3;
+
+        }
+
+        nav ul ul li a span {
+            position: absolute;
+            top: 50%;
+            right: 30px;
+            transform: translateY(-50%);
+            font-size: 22px;
+        }
+
+        nav ul ul li a:hover span {
+            transform: translateY(-50%) rotate(-180deg);
+        }
+
+        @media (max-width:850px) {
+            .side_menu {
+                position: fixed;
+                width: 50%;
+                right: 100%;
+                transition: 0.1s ease-in-out;
+            }
+
+            .menu-btn.click {
+                left: 42%;
+            }
+
+            .side_menu.show {
+                left: 50%;
+
+            }
+        }
+        .stick{
+            position: sticky;
+            
+        }
+    </style>
+
+</head>
+
+<body>
+    
+
+
+    <!-- ---------------------------------------------FOOTER------------------------------------------- -->
+    <style>
+        footer form{display: grid;
+            grid-column: auto repeat;
+        }
+        .query-form{
+            background: #e90515;
+            text-align: center;
+            padding: 30px;  
+        }
+
+        .query-form p{
+            font-size: 26px;
+            color: #FFF;
+            font-weight: 500;
+        }
+        
+            footer form input{
+            width: 50%;
+            margin: 10px;
+            padding: 4px;
+            border: 2px solid white;
+            border-radius: 3px;
+        }
+
+        footer form input[type=submit]{
+            background-color: #d2444b;
+            border: none;
+            color: #FFF;
+            font-size: 16px;
+            cursor: pointer;
+        }
+    </style>
+    <footer>
+        <section class="query-form">
+            <p>Have a Question or want to Speak to our Team?</p>
+            <form action="#">
+                <input type="text" name="q_name" placeholder="Name" required>
+                <input type="email" name="q_email" placeholder="Email" required>
+                <input type="tel" name="q_phone" placeholder="Contact No." required>
+                <input type="submit" value="Submit">
+            </form>
+        </section>
+
+        <section class="footer">
+            
+            
+            <div class="box-container">
+
+                <div class="box">
+                <h3>Our Speciality</h3>
+                <a href="#">MASTERBATCH</a>
+                <a href="#">FILLER</a>
+                <a href="#">MODIFIERS</a>
+                <a href="#">Compounds</a>
+            </div>
+            
+            <div class="box">
+                <h3>Quick Links</h3>
+                <a href="#"><i class="fas fa-user"></i> About</a>
+                <a href="#"><i class="fas fa-circle"></i> Product</a>
+                <a href="#"><i class="fas fa-circle"></i> Carrier</a>
+                <a href="#"><i class="fas fa-phone"></i> Contact</a>
+            </div>
+            <div class="box">
+                <h3>Contact Us</h3>
+                <a href="#"><i class="fas fa-phone"></i>+91 1234567890</a>
+                <a href="#"><i class="fas fa-envelope"></i>rama@gmail.com</a>
+                <a href="#"><i class="fas fa-map-marker-alt"></i>Industrial Area, India</a>
+            </div>
+        </div>
+        <div class="copyright">
+            Copyright <span style="font-size:24px">&#169</span> RAMA 2022
+        </div>
+    </section>
+</footer>
+    
+
+
+
+
+
+
+
+    <script>
+        $('.about').click(function () {
+            $('nav ul .about_show').toggleClass("show");
+        });
+        $('.product').click(function () {
+            $('nav ul .product_show').toggleClass("show");
+        });
+
+        $('.menu-btn').click(function () {
+            $(this).toggleClass('click');
+            $('.side_menu').toggleClass('show');
+        });
+
+    </script>
+</body>
+
+</html>

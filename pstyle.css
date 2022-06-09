@@ -1,0 +1,72 @@
+:root{
+    --fadeRed: #ff1322;
+    --fadeBlue: #3f09e3;
+    --red: #e90515;
+    --blue: #3b00e9;
+}
+
+
+
+.bg-black{
+    background-color: rgba(0,0,0,0.9);
+}
+
+.bg-img{
+    background-image: url(careerbg_banner.jpg);
+}
+
+.jumbo-back-img{
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 70vh;
+    background-position: center;
+}
+
+.bg-brand{
+    background-color: var(--fadeRed);
+}
+
+.text-brand{
+    color: var(--fadeRed);
+}
+.margin-reduce{
+    margin-top: -5rem;
+}
+
+.border-none{
+    border: none;
+}
+
+.bg-blue{
+    background-color: var(--fadeBlue);
+}
+
+.text-blue{
+    color: var(--fadeBlue);
+}
+
+.product-height-footer{
+    height: 50px;
+}
+
+.font-height-5{
+    font-size: 4rem;
+}
+
+.bg-shadow-img{
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url(/data/manufacture_1.jpg);
+}
+
+.span-color{
+    color: var(--fadeRed);
+}
+
+.bg-trans{
+    background-color: transparent;
+}
+
+.pos-top{
+    position: relative;
+    bottom: 6.6rem;
+    z-index: 0;
+}
